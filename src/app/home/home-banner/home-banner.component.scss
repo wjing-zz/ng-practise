@@ -1,0 +1,55 @@
+@import '../../shared/scss/common.scss';
+
+.home-banner{
+    width: 100%;
+    background-color: $white;
+    box-shadow:  0 0 10px #0000001f;
+    display: flex;
+    height:50px;
+    align-items: center;
+    min-width:1024px;
+}
+.product-change{
+    width: 30%;
+}
+.toggle{
+    width: 15%;
+}
+.search{
+    width: 20%;
+}
+.productsSwitch {
+    display: flex;
+    justify-content: space-evenly;
+    // margin-top: 4px;
+    width: 300px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid $toggle-gray !important;
+    border-radius: 4px;
+    cursor: pointer;
+
+    .productsButton {
+      width: 50%;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      background-color: $icon-light-gray;
+      color: $icon-dark-gray;
+    }
+
+    .logical-button {
+      border-right: 1px solid $icon-dark-gray !important;
+      border: 2px solid $blue  !important;
+      border-radius: 4px;
+    }
+    .type-active{
+      color: $blue;
+      background-color: $light-blue;
+    }
+
+    .type-icon {
+      font-size: 28px;
+      color: $blue;
+    }
+}
+

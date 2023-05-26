@@ -1,0 +1,23 @@
+<div class="home-banner">
+    <div class="product-change">
+        <div class="productsSwitch">
+            <span class="productsButton logical-button" [ngClass]="{'type-active': isAll}" (click)="changeTableData('Logical')">All Products</span>
+            <span class="productsButton" [ngClass]="{'type-active': isErleada}" (click)="changeTableData('Physical')">Erleada</span>
+            <span class="productsButton" [ngClass]="{'type-active': isZytiga}" (click)="changeTableData('Physical')">Zytiga</span>
+          </div>
+    </div>
+    <div class="toggle">
+       <app-toggle-switch (toggleSwitchChange)="toggleSwitchChanged($event, 1)" [isChecked]='toggleAisChecked' [color] = '"purple"' [toggleText]="toggleTextA"></app-toggle-switch>
+    </div>
+    <div class="toggle">
+        <app-toggle-switch (toggleSwitchChange)="toggleSwitchChanged($event, 2)" [isChecked]='toggleBisChecked' [color] = '"blue"' [toggleText]="toggleTextB"></app-toggle-switch>
+    </div>
+    <!--search-->
+    <div class="search">
+    
+        <label for="de-search">Search:</label>
+        <input id="de-search" type="search" class="form-control form-control-sm" [(ngModel)]="typingSearchValue"
+            placeholder="Search HCP/HCO" aria-label="Search" aria-describedby="basic-addon1"/>
+    </div>
+
+</div>
