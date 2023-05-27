@@ -1,0 +1,46 @@
+@import '../../shared/scss/common.scss';
+
+.schedule-board{
+    margin-top:20px;
+}
+.board-table{
+    width: 100%;
+    background-color: $white;
+    box-shadow:  0 0 10px #00000035;
+    display: flex;
+    //height:200px;
+    align-items: center;
+    min-width:1024px;
+    border-radius: 4px;
+}
+.secHeader{
+    background-color: $back-ground
+}
+table {
+    width: 100%;
+    margin: 0 auto;
+    border: 0px solid;
+    border-collapse: collapse;
+    //border-radius: 4px;
+}
+
+th{ 
+    height: 40px;
+}
+
+th,
+td{
+    border-right: 2px solid $toggle-gray;
+    border-bottom: 2px solid $toggle-gray;
+    border-top: 0;
+    border-left: 0;
+}
+thead tr:nth-child(2) th{
+    border-bottom: 0;
+}
+.font-blue{
+    color: $blue;
+}
+.drName {
+    font-size: 18px;
+}

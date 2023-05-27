@@ -15,6 +15,7 @@ export class HomeBannerComponent {
   isErleada:any;
   isZytiga:any;
   typingSearchValue: string ='';
+
   toggleSwitchChanged(event:any, type:number){
 
   }
@@ -25,4 +26,5 @@ export class HomeBannerComponent {
   onSerchInputChange(value:any, $event:any){
 
   }
+
 }

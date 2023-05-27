@@ -1,4 +1,5 @@
 <div class="home-banner">
+    <!-- product-change -->
     <div class="product-change">
         <div class="productsSwitch">
             <span class="productsButton logical-button" [ngClass]="{'type-active': isAll}" (click)="changeTableData('Logical')">All Products</span>
@@ -6,6 +7,7 @@
             <span class="productsButton" [ngClass]="{'type-active': isZytiga}" (click)="changeTableData('Physical')">Zytiga</span>
           </div>
     </div>
+    <!-- toggles -->
     <div class="toggle">
        <app-toggle-switch (toggleSwitchChange)="toggleSwitchChanged($event, 1)" [isChecked]='toggleAisChecked' [color] = '"purple"' [toggleText]="toggleTextA"></app-toggle-switch>
     </div>

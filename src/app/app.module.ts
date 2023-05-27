@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ToggleSwitchComponent } from './shared/component/toggle-switch/toggle-switch.component';
 import { HomeBannerComponent } from './home/home-banner/home-banner.component';
+import { ScheduleBoardComponent } from './home/schedule-board/schedule-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ToggleSwitchComponent,
-    HomeBannerComponent
+    HomeBannerComponent,
+    ScheduleBoardComponent
   ],
   imports: [
     BrowserModule,

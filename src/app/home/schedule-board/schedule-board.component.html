@@ -1,0 +1,35 @@
+<div class="schedule-board">
+    <div class="board-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>HCP List</th>
+                    <th>Confirmed schedule</th>
+                    <th>ACE ReCommended Frequency</th>
+                </tr>
+                <tr class="secHeader">
+                    <th class="font-blue">{{hcpType}}</th>
+                    <th>Current Period</th>
+                    <th>Current Period</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of hcpList;let listIndex = index;">
+                    <th>
+                        <div class="group-name">
+                            {{item.group}}
+                        </div>
+                        <div class="drName font-blue">
+                            {{item.drName}}
+                        </div>
+                        <div class="hosName">
+                            {{item.hosName}}
+                        </div>
+                    </th>
+                    <th>data</th>
+                    <td>chart</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
