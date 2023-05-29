@@ -9,13 +9,10 @@ export class ToggleSwitchComponent implements OnInit {
   @Input() color: any;
   @Input() toggleText: any;
   @Input() isChecked: boolean | undefined;
-  @Output() discussionDateChange: EventEmitter<any> = new EventEmitter();
-  //isChecked: boolean = true;
+  @Output() toggleSwitchChange: EventEmitter<any> = new EventEmitter();
+
   ngOnInit(): void {
-    // this.userService.getUserProfile().subscribe((profile) => {
-    //   this.profile = profile;
-    // });
-    // this.getdiscussionDates();
+
     if(this.isChecked){
 
     }
@@ -23,7 +20,9 @@ export class ToggleSwitchComponent implements OnInit {
 
   toggleClick(){
     this.isChecked=!this.isChecked;
+    this.toggleSwitchChange.emit(this.isChecked);
   }
+  
   getTextStyle(type: string){
     let result = []
     if(this.isChecked){

@@ -3,22 +3,17 @@
 .home-banner{
     width: 100%;
     background-color: $white;
-    box-shadow:  0 0 10px #00000035;
+    box-shadow:  0 0 10px $shadow;
     border-radius: 4px;
     display: flex;
     height:50px;
     align-items: center;
     min-width:1024px;
 }
+
 .product-change{
   padding-left: 10px;
     width: 30%;
-}
-.toggle{
-    width: 15%;
-}
-.search{
-    width: 20%;
 }
 .productsSwitch {
     display: flex;
@@ -38,20 +33,44 @@
       background-color: $icon-light-gray;
       color: $icon-dark-gray;
     }
-
-    .logical-button {
-      border-right: 1px solid $icon-dark-gray !important;
-      border: 2px solid $blue  !important;
-      border-radius: 4px;
-    }
     .type-active{
       color: $blue;
       background-color: $light-blue;
+      border: 2px solid $blue  !important;
+      border-radius: 4px;
     }
-
     .type-icon {
       font-size: 28px;
       color: $blue;
     }
 }
 
+.toggle{
+  width: 15%;
+}
+
+//search bar
+.search{
+  width: 20%;
+  border-bottom: 1px solid $under-line;  
+  border-top:0px;  
+  border-left:0px;  
+  border-right:0px;  
+}
+#bar-search{
+  border: 0;
+  height: 25px;
+  padding-left: 10px;
+  font-size: 16px;
+}
+.magnifying{
+  color: $blue;
+  font-size: 25px;
+}
+input:focus{
+  outline:none;
+}
+::placeholder { 
+  color: $icon-dark-gray;
+  opacity: 1; 
+}

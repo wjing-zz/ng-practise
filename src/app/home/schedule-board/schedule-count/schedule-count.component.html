@@ -1,0 +1,19 @@
+<div *ngIf="isFirstRow" class="grid-container first-row">
+    <div></div>
+    <span class="icon-background"><i class="fa-solid fa-user-group" style="color: #ffffff;"></i> </span>
+    <span class="icon-background"><i class="fa-regular fa-window-maximize" style="color: #ffffff;"></i> </span>
+    <span class="icon-background"><i class="fa-solid fa-phone" style="color: #ffffff;"></i> </span>
+    <span class="icon-background"><i class="fa-regular fa-envelope" style="color: #ffffff;"></i> </span>
+    <span class="icon-background"><i class="fa-solid fa-pen" style="color: #ffffff;"></i> </span>
+    <span class="icon-background"><i class="fa-solid fa-envelopes-bulk" style="color: #ffffff;"></i></span>
+</div>
+<div class="grid-container">
+    <div class="tar-font">Target</div>
+    <div *ngFor="let item of hcpItem.scheduleCount.tar" class="grid-item">{{item}}</div>
+    <div class="tar-font blue">ToDo</div>
+    <div *ngFor="let item of hcpItem.scheduleCount.todo" class="grid-item blue"><span class="toDo-icon">{{item}}</span></div>
+    <div><i class="fa-regular fa-calendar-days icon-green"></i></div>
+    <div *ngFor="let item of hcpItem.scheduleCount.sche" class="grid-item icon-green">{{item}}</div>
+    <div><i class="fa-solid fa-check icon-grey"></i></div>
+    <div *ngFor="let item of hcpItem.scheduleCount.done" class="grid-item icon-grey">{{item}}</div>
+</div>

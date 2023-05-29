@@ -8,5 +8,4 @@ import { ToggleSwitchComponent } from '../shared/component/toggle-switch/toggle-
 })
 export class HomeComponent {
 
-
 }

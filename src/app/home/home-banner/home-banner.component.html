@@ -2,9 +2,9 @@
     <!-- product-change -->
     <div class="product-change">
         <div class="productsSwitch">
-            <span class="productsButton logical-button" [ngClass]="{'type-active': isAll}" (click)="changeTableData('Logical')">All Products</span>
-            <span class="productsButton" [ngClass]="{'type-active': isErleada}" (click)="changeTableData('Physical')">Erleada</span>
-            <span class="productsButton" [ngClass]="{'type-active': isZytiga}" (click)="changeTableData('Physical')">Zytiga</span>
+            <span class="productsButton" [ngClass]="{'type-active': productsType.isAll}" (click)="changeTableData('All')">All Products</span>
+            <span class="productsButton" [ngClass]="{'type-active': productsType.isErleada}" (click)="changeTableData('Erleada')">Erleada</span>
+            <span class="productsButton" [ngClass]="{'type-active': productsType.isZytiga}" (click)="changeTableData('Zytiga')">Zytiga</span>
           </div>
     </div>
     <!-- toggles -->
@@ -16,10 +16,9 @@
     </div>
     <!--search-->
     <div class="search">
-    
-        <label for="de-search">Search:</label>
-        <input id="de-search" type="search" class="form-control form-control-sm" [(ngModel)]="typingSearchValue"
-            placeholder="Search HCP/HCO" aria-label="Search" aria-describedby="basic-addon1"/>
+        <label class="magnifying" for="bar-search"><i class="fa-solid fa-magnifying-glass"></i></label>
+        <input id="bar-search" type="search" [(ngModel)]="typingSearchValue"
+            placeholder="Search HCP/HCO" aria-label="Search"/>
     </div>
 
 </div>

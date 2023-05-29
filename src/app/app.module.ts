@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { ToggleSwitchComponent } from './shared/component/toggle-switch/toggle-switch.component';
 import { HomeBannerComponent } from './home/home-banner/home-banner.component';
 import { ScheduleBoardComponent } from './home/schedule-board/schedule-board.component';
+import { ScheduleCountComponent } from './home/schedule-board/schedule-count/schedule-count.component';
+import { ScheduleDetailsComponent } from './home/schedule-board/schedule-details/schedule-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ScheduleBoardComponent } from './home/schedule-board/schedule-board.com
     HomeComponent,
     ToggleSwitchComponent,
     HomeBannerComponent,
-    ScheduleBoardComponent
+    ScheduleBoardComponent,
+    ScheduleCountComponent,
+    ScheduleDetailsComponent
   ],
   imports: [
     BrowserModule,

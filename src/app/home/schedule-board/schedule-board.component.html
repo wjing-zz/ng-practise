@@ -8,16 +8,28 @@
                     <th>ACE ReCommended Frequency</th>
                 </tr>
                 <tr class="secHeader">
-                    <th class="font-blue">{{hcpType}}</th>
-                    <th>Current Period</th>
-                    <th>Current Period</th>
+                    <th>
+                        <select class="font-blue" id="ht" (change)="changeHcpType()" [(ngModel)]="hcpType">
+                            <option *ngFor="let ht of hcpTypeList" [value]="ht">{{ht}}</option>
+                        </select>
+                    </th>
+                    <th>
+                        <span class="angle-class">
+                            <i class="fa-regular fa-angle-left" (click)="changePeriod('last')"></i>
+                        </span>
+                        {{currentPeriod}}
+                        <span class="angle-class">
+                            <i class="fa-regular fa-angle-right" (click)="changePeriod('next')"></i>
+                        </span>
+                    </th>
+                    <th>{{currentPeriod}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of hcpList;let listIndex = index;">
-                    <th>
+                    <th class="hcp-card">
                         <div class="group-name">
-                            {{item.group}}
+                            <span class="group-backgroud">{{item.group}}</span>
                         </div>
                         <div class="drName font-blue">
                             {{item.drName}}
@@ -26,8 +38,8 @@
                             {{item.hosName}}
                         </div>
                     </th>
-                    <th>data</th>
-                    <td>chart</td>
+                    <th><app-schedule-details *ngIf="item.data" [hcpItem]="item.data" [isFirstRow]="listIndex==0"></app-schedule-details></th>
+                    <td class="schedule-count"><app-schedule-count [hcpItem]="item" [isFirstRow]="listIndex==0"></app-schedule-count></td>
                 </tr>
             </tbody>
         </table>

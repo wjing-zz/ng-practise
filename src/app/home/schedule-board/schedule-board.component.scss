@@ -6,7 +6,7 @@
 .board-table{
     width: 100%;
     background-color: $white;
-    box-shadow:  0 0 10px #00000035;
+    box-shadow:  0 0 10px $shadow;
     display: flex;
     //height:200px;
     align-items: center;
@@ -14,14 +14,15 @@
     border-radius: 4px;
 }
 .secHeader{
-    background-color: $back-ground
+    background-color: $back-ground;
+    color: $blue;
 }
 table {
     width: 100%;
     margin: 0 auto;
     border: 0px solid;
     border-collapse: collapse;
-    //border-radius: 4px;
+    border-radius: 4px;
 }
 
 th{ 
@@ -30,17 +31,54 @@ th{
 
 th,
 td{
-    border-right: 2px solid $toggle-gray;
-    border-bottom: 2px solid $toggle-gray;
-    border-top: 0;
-    border-left: 0;
-}
-thead tr:nth-child(2) th{
+    border-top: 2px solid $toggle-gray;
+    border-left: 2px solid $toggle-gray;
+    border-right: 0;
     border-bottom: 0;
 }
+thead tr:nth-child(1) th{
+    border-top: 0;
+}
+
+tbody tr:nth-child(1) th,tbody tr:nth-child(1) td{
+    border-top: 0;
+}
+
+//dropdown
+select{
+    border: 0;
+    background-color: $back-ground;
+    font-size: 18px;
+    font-weight: bold;
+}
+select:focus{
+    outline:none;
+  }
+
 .font-blue{
     color: $blue;
 }
 .drName {
     font-size: 18px;
+}
+.hcp-card{
+    width: 200px;
+    height: 100%;
+}
+.schedule-count{
+    width: 400px;
+    height: 100%;
+}
+
+.group-name{
+    color: $white;
+}
+.group-backgroud{
+    background-color: $icon-grey;
+    border-radius: 6px;
+    padding: 3px 8px;
+}
+.angle-class{
+    cursor: pointer;
+    padding: 0 25px;
 }

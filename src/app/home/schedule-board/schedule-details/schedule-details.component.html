@@ -1,0 +1,13 @@
+<div class="grid-container" *ngIf="isFirstRow">
+    <div *ngFor="let i of weeks;let index=index" class="icon-grey">Week {{index+1}}</div>
+</div>
+    
+    
+<div class="grid-container">
+    <div *ngFor="let detail of listDetails;let index = index" class="grid-item"> {{index}}
+        <div *ngFor="let item of detail" class="grid-item icon-dispaly">
+            <span *ngIf="item.owner == 'my'" class="icon-background"><div class ="icon" [ngClass]="getIconType(item.icon)"></div></span>
+            <span *ngIf="item.owner == 'all' && isMyOrAllType" class="icon-background" [ngClass]="getIconBackColor(item.type)"><div class ="icon" [ngClass]="getIconType(item.icon)"></div></span>
+        </div>
+    </div>
+</div>
