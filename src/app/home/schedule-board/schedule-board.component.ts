@@ -41,7 +41,7 @@ export class ScheduleBoardComponent implements OnInit {
       
     });
 
-    this.globalStatusService.isMothOrWeekEvent.subscribe((type: any) => {
+    this.globalStatusService.isMonthOrWeekEvent.subscribe((type: any) => {
       this.getCurrentPeriod();
       }
     )
@@ -69,7 +69,7 @@ export class ScheduleBoardComponent implements OnInit {
   }
   changePeriod(type: string) {
     let date = this.globalStatusService.currentPeriod;
-    if (this.globalStatusService.isMothOrWeek) {
+    if (this.globalStatusService.isMonthOrWeek) {
       //week
       if (type == "last") {
         date = new Date((date.getTime() - this.oneDayTime*7));
@@ -91,7 +91,7 @@ export class ScheduleBoardComponent implements OnInit {
     this.getCurrentPeriod();
   }
   getCurrentPeriod() {
-    if (this.globalStatusService.isMothOrWeek) {
+    if (this.globalStatusService.isMonthOrWeek) {
       //week
       const monday = new Date(this.globalStatusService.currentPeriod.getTime() - this.oneDayTime)
       const sunday = new Date(this.globalStatusService.currentPeriod.getTime() + this.oneDayTime * 6)

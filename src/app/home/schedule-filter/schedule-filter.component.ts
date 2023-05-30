@@ -29,8 +29,8 @@ export class ScheduleFilterComponent {
         break;
       case 2:
         this.toggleBisChecked = event;
-        this.globalStatusService.isMothOrWeek = this.toggleBisChecked;
-        this.globalStatusService.isMothOrWeekEvent.emit(this.toggleBisChecked);
+        this.globalStatusService.isMonthOrWeek = this.toggleBisChecked;
+        this.globalStatusService.isMonthOrWeekEvent.emit(this.toggleBisChecked);
         break;
     }
     

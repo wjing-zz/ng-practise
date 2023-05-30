@@ -8,7 +8,6 @@
     background-color: $white;
     box-shadow:  0 0 10px $shadow;
     display: flex;
-    //height:200px;
     align-items: center;
     min-width:1400px;
     border-radius: 4px;
@@ -16,6 +15,7 @@
 .secHeader{
     background-color: $back-ground;
     color: $blue;
+    user-select: none;
 }
 table {
     width: 100%;
@@ -52,9 +52,8 @@ select{
     font-weight: bold;
     appearance: none;
     padding-right: 10px;
-    option{
-        border: 0px;
-    }
+    cursor: pointer;
+
 }
 select:focus{
     outline:none;

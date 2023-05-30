@@ -5,7 +5,7 @@
         <div *ngFor="let i of weeks;let index=index" class="icon-gray">Week {{index+1}}</div>
     </div>
     <div class="grid-container body">
-        <div class="current-date-pointer"></div>
+        <div class="current-date-pointer" *ngIf="ifCurrentPeriod()" [ngStyle]="{'left':calculatePointer()}"></div>
         <div *ngFor="let detail of listDetails;let index = index" class="grid-item">
             <div *ngFor="let item of detail" class="icon-dispaly">
                 <span *ngIf="item.owner == 'my'" class="icon-background">
@@ -25,6 +25,7 @@
         <div *ngFor="let day of oneWeek;let index=index" class="icon-gray">{{day}}</div>
     </div>
     <div class="grid-container body" style="height: 100%;">
+        <div class="current-date-pointer" *ngIf="ifCurrentPeriod()" [ngStyle]="{'left':calculatePointer()}"></div>
         <div *ngFor="let detail of listDetails;let index = index" class="grid-item">
             <div *ngFor="let item of detail" class="icon-dispaly">
                 <span *ngIf="item.owner == 'my'" class="icon-background">

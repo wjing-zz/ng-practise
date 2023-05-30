@@ -14,6 +14,7 @@ export class ScheduleDetailsComponent implements OnInit {
 
   isMyOrAllType: boolean = true;
   isMonthOrWeek: boolean | undefined;
+  oneDayTime = 24 * 60 * 60 * 1000;
   oneWeek: Array<any> = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   constructor(private globalStatusService: GlobalStatusService) { }
   ngOnInit(): void {
@@ -25,11 +26,11 @@ export class ScheduleDetailsComponent implements OnInit {
   onInitData() {
     //get toggle status
     this.isMyOrAllType = this.globalStatusService.isMyOrAll;
-    this.isMonthOrWeek = this.globalStatusService.isMothOrWeek;
+    this.isMonthOrWeek = this.globalStatusService.isMonthOrWeek;
     this.globalStatusService.isMyOrAllEvent.subscribe((toggleStatus: any) => {
       this.isMyOrAllType = toggleStatus;
     })
-    this.globalStatusService.isMothOrWeekEvent.subscribe((toggleStatus: any) => {
+    this.globalStatusService.isMonthOrWeekEvent.subscribe((toggleStatus: any) => {
       this.isMonthOrWeek = toggleStatus;
       this.splitCurrentWeekOnit(currentDate);
     })
@@ -62,15 +63,15 @@ export class ScheduleDetailsComponent implements OnInit {
       //split week to days
       const now = new Date(Date.UTC(year, month, day));
       const nowTime = now.getTime();
-      const oneDayTime = 24 * 60 * 60 * 1000;
-      let start = nowTime - (dayPeriod - 1) * oneDayTime; // first day in currnt week
+
+      let start = nowTime - (dayPeriod - 1) * this.oneDayTime; // first day in currnt week
       console.log(new Date(start))
 
       for (let i = 0; i < 7; i++) {
-        const startDay = start + oneDayTime * i;
+        const startDay = start + this.oneDayTime * i;
 
         week_array.push(
-          [new Date(startDay), new Date(startDay + oneDayTime)]
+          [new Date(startDay), new Date(startDay + this.oneDayTime)]
         )
       }
     } else {
@@ -133,5 +134,38 @@ export class ScheduleDetailsComponent implements OnInit {
       default:
         return '';
     }
+  }
+  calculatePointer(){
+    let percentage;
+      if (this.globalStatusService.isMonthOrWeek) {
+        //week
+        percentage = (new Date().getDay()/7*100).toString() + '%';
+      } else {
+        //month
+      let today = new Date()
+      let lastDay= new Date(today.getFullYear(), today.getMonth() + 1, 0);
+      percentage = (today.getDate()/lastDay.getDate()*100).toString() + '%'
+      }
+      return percentage;
+  }
+  ifCurrentPeriod() {
+    let isCurrentPeriod: boolean = false;
+    if (this.globalStatusService.isMonthOrWeek) {
+      //week
+      const monday = new Date(this.globalStatusService.currentPeriod.getTime() - this.oneDayTime)
+      const sunday = new Date(this.globalStatusService.currentPeriod.getTime() + this.oneDayTime * 6)
+      
+      //save if currentweek
+      const today = new Date()
+      if (today.getTime() > monday.getTime() && today.getTime() < sunday.getTime()) { 
+        isCurrentPeriod = true; 
+      } 
+    } else {
+      //month
+      isCurrentPeriod = new Date().getFullYear() == this.globalStatusService.currentPeriod.getFullYear()
+        && new Date().getMonth() == this.globalStatusService.currentPeriod.getMonth();
+
+    }
+    return isCurrentPeriod;
   }
 }

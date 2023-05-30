@@ -6,12 +6,12 @@ import { Injectable, EventEmitter } from '@angular/core';
 export class GlobalStatusService {
   public isMyOrAll: any = true;
   public currentPeriod: Date = new Date();
-  public isMothOrWeek: any;
+  public isMonthOrWeek: any;
   constructor() {
     
   }
   isMyOrAllEvent = new EventEmitter();
-  isMothOrWeekEvent = new EventEmitter();
+  isMonthOrWeekEvent = new EventEmitter();
   allProductsEvent = new EventEmitter();
   currentPeriodEvent = new EventEmitter();
 }
