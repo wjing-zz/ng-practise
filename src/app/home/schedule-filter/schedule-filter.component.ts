@@ -6,8 +6,6 @@ import { GlobalStatusService } from 'src/app/shared/service/global-status.servic
   styleUrls: ['./schedule-filter.component.scss']
 })
 export class ScheduleFilterComponent {
-  // @Output() toggleAChangeEmitter = new EventEmitter<any>();
-  // @Output() toggleBChangeEmitter = new EventEmitter<any>();
   toggleTextA:any = {left:'MY',right:'ALL'};
   toggleTextB:any = {left:'Month',right:'Week'};
   toggleAisChecked:boolean = true;
@@ -28,13 +26,11 @@ export class ScheduleFilterComponent {
         this.toggleAisChecked = event;
         this.globalStatusService.isMyOrAll = this.toggleAisChecked;
         this.globalStatusService.isMyOrAllEvent.emit(this.toggleAisChecked);
-        //this.toggleAChangeEmitter.emit(this.toggleAisChecked);
         break;
       case 2:
         this.toggleBisChecked = event;
         this.globalStatusService.isMothOrWeek = this.toggleBisChecked;
         this.globalStatusService.isMothOrWeekEvent.emit(this.toggleBisChecked);
-        //this.toggleBChangeEmitter.emit(this.toggleBisChecked);
         break;
     }
     

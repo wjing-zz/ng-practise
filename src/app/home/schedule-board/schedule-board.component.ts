@@ -15,7 +15,7 @@ export class ScheduleBoardComponent implements OnInit {
   public hcpTypeList: Array<string> = ['ACE Prioritization','Test Prioritization']
   public productType: string = 'All';
   public currentPeriod: string | undefined;
-  //public isMyOrAllType: boolean = true;
+
   public oneDayTime = 24 * 60 * 60 * 1000;
 
   constructor(private homeService: HomeService,
@@ -40,9 +40,9 @@ export class ScheduleBoardComponent implements OnInit {
       error: err => {}
       
     });
-    //this.hcpListAll = this.homeService.getHCPList();
+
     this.globalStatusService.isMothOrWeekEvent.subscribe((type: any) => {
-      this.getCurrentPeriod()
+      this.getCurrentPeriod();
       }
     )
     
@@ -71,8 +71,6 @@ export class ScheduleBoardComponent implements OnInit {
     let date = this.globalStatusService.currentPeriod;
     if (this.globalStatusService.isMothOrWeek) {
       //week
-      //const oneDayTime = 24 * 60 * 60 * 1000;
-
       if (type == "last") {
         date = new Date((date.getTime() - this.oneDayTime*7));
       } else {

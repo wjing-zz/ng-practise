@@ -11,7 +11,7 @@ export class ScheduleDetailsComponent implements OnInit {
   @Input() isFirstRow: boolean | undefined;
   weeks: Array<any> = [];
   listDetails: Array<any> = [];
-  //error
+
   isMyOrAllType: boolean = true;
   isMonthOrWeek: boolean | undefined;
   oneWeek: Array<any> = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -33,20 +33,13 @@ export class ScheduleDetailsComponent implements OnInit {
       this.isMonthOrWeek = toggleStatus;
       this.splitCurrentWeekOnit(currentDate);
     })
-    // this.globalStatusService.currentPeriod.subscribe((currentDate: any) => {
-    //   this.weeks = this.splitWeeks(currentDate.getFullYear(), currentDate.getMonth());
-    // })
 
     const currentDate = this.globalStatusService.currentPeriod;
     this.splitCurrentWeekOnit(currentDate)
 
-
     this.globalStatusService.currentPeriodEvent.subscribe((currentDate: any) => {
       this.splitCurrentWeekOnit(currentDate);
     })
-
-
-
   }
   splitCurrentWeekOnit(currentDate: Date) {
     this.listDetails = [];

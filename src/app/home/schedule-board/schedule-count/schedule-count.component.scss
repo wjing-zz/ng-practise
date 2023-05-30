@@ -5,6 +5,9 @@
 }
 .first-row{
     padding-top: 20px;
+    .fa-regular{
+        color: $white;
+    }
 }
 .grid-container {
     display: grid;
@@ -16,7 +19,7 @@
     align-items: center;
   }
 .icon-background{
-    background-color: #cdcdcd;
+    background-color: $icon-gray;
     border-radius: 20px;
     padding: 4px;
     display: inline-block;
