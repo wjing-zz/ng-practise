@@ -6,6 +6,7 @@
   &.first-row {
     .grid-container.header {
       display: grid;
+      align-items: center;
     }
     .grid-container.body {
       height: 80%;
