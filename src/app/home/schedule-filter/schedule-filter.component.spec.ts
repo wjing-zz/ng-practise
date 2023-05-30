@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ScheduleFilterComponent } from './schedule-filter.component';
 
-import { HomeBannerComponent } from './home-banner.component';
-
-describe('HomeBannerComponent', () => {
-  let component: HomeBannerComponent;
-  let fixture: ComponentFixture<HomeBannerComponent>;
+describe('ScheduleFilterComponent', () => {
+  let component: ScheduleFilterComponent;
+  let fixture: ComponentFixture<ScheduleFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeBannerComponent ]
+      declarations: [ ScheduleFilterComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeBannerComponent);
+    fixture = TestBed.createComponent(ScheduleFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

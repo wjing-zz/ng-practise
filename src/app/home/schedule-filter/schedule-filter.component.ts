@@ -1,11 +1,11 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { GlobalStatusService } from 'src/app/shared/service/global-status.service';
 @Component({
-  selector: 'app-home-banner',
-  templateUrl: './home-banner.component.html',
-  styleUrls: ['./home-banner.component.scss']
+  selector: 'app-schedule-filter',
+  templateUrl: './schedule-filter.component.html',
+  styleUrls: ['./schedule-filter.component.scss']
 })
-export class HomeBannerComponent {
+export class ScheduleFilterComponent {
   // @Output() toggleAChangeEmitter = new EventEmitter<any>();
   // @Output() toggleBChangeEmitter = new EventEmitter<any>();
   toggleTextA:any = {left:'MY',right:'ALL'};
