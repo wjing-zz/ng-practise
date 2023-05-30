@@ -50,6 +50,11 @@ select{
     background-color: $back-ground;
     font-size: 18px;
     font-weight: bold;
+    appearance: none;
+    padding-right: 10px;
+    option{
+        border: 0px;
+    }
 }
 select:focus{
     outline:none;
@@ -58,26 +63,42 @@ select:focus{
 .font-blue{
     color: $blue;
 }
-.drName {
-    font-size: 18px;
-}
+
+
+
+//card
 .hcp-card{
     width: 200px;
     height: 100%;
+    .drName {
+        font-size: 18px;
+    }
+    .group-name{
+        color: $white;
+    }
+    .hosName{
+        color: $icon-gray;
+    }
+    .group-backgroud{
+        background-color: $icon-gray;
+        border-radius: 6px;
+        padding: 3px 8px;
+    }
+}
+.hcp-card .card-detail{
+    text-align: left;
+    margin-left: 25px;
+    min-height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .schedule-count{
     width: 400px;
     height: 100%;
 }
 
-.group-name{
-    color: $white;
-}
-.group-backgroud{
-    background-color: $icon-grey;
-    border-radius: 6px;
-    padding: 3px 8px;
-}
+
 .angle-class{
     cursor: pointer;
     padding: 0 25px;

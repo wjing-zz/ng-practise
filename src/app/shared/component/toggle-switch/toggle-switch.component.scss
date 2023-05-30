@@ -64,7 +64,7 @@
   .slider.round:before {
     border-radius: 50%;
     border: 2px solid $blue;
-    
+    box-shadow: 0 3px 4px $icon-dark-gray;
   }
 
 .toggleText {

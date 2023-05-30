@@ -25,6 +25,10 @@
     height: 20px;
     text-align: center;
 }
+.count-body{
+    background-color: #f7fffd;
+    min-height: 150px;
+}
 .tar-font{
     font-size: 15px;
     font-family: fantasy;
@@ -35,7 +39,7 @@
 .icon-green{
     color: $icon-green;
 }
-.icon-grey{
+.icon-gray{
     color: $icon-dark-gray;
 }
 .toDo-icon{
@@ -49,7 +53,6 @@
     font-weight: bold;
 }
 .grid-item{
-    height: 35px;
     text-align: center;
-    display: inline-block;
 }
+

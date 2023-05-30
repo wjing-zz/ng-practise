@@ -13,6 +13,8 @@ export class ScheduleDetailsComponent implements OnInit {
   listDetails: Array<any> = [];
   //error
   isMyOrAllType: boolean = true;
+  isMonthOrWeek: boolean | undefined;
+  oneWeek: Array<any> = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   constructor(private globalStatusService: GlobalStatusService) { }
   ngOnInit(): void {
 
@@ -23,8 +25,13 @@ export class ScheduleDetailsComponent implements OnInit {
   onInitData() {
     //get toggle status
     this.isMyOrAllType = this.globalStatusService.isMyOrAll;
+    this.isMonthOrWeek = this.globalStatusService.isMothOrWeek;
     this.globalStatusService.isMyOrAllEvent.subscribe((toggleStatus: any) => {
       this.isMyOrAllType = toggleStatus;
+    })
+    this.globalStatusService.isMothOrWeekEvent.subscribe((toggleStatus: any) => {
+      this.isMonthOrWeek = toggleStatus;
+      this.splitCurrentWeekOnit(currentDate);
     })
     // this.globalStatusService.currentPeriod.subscribe((currentDate: any) => {
     //   this.weeks = this.splitWeeks(currentDate.getFullYear(), currentDate.getMonth());
@@ -43,7 +50,7 @@ export class ScheduleDetailsComponent implements OnInit {
   }
   splitCurrentWeekOnit(currentDate: Date) {
     this.listDetails = [];
-    this.weeks = this.splitWeeks(currentDate.getFullYear(), currentDate.getMonth());
+    this.weeks = this.splitWeeks(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), currentDate.getDay());
     for (let i = 0; i < this.weeks.length; i++) {
       const currentPeriod: any = [];
       console.log(this.hcpItem);
@@ -56,24 +63,41 @@ export class ScheduleDetailsComponent implements OnInit {
     };
 
   }
-  splitWeeks(year: number, month: number) {
+  splitWeeks(year: number, month: number, day: number, dayPeriod: number) {
     let week_array = [];
+    if (this.isMonthOrWeek) {
+      //split week to days
+      const now = new Date(Date.UTC(year, month, day));
+      const nowTime = now.getTime();
+      const oneDayTime = 24 * 60 * 60 * 1000;
+      let start = nowTime - (dayPeriod - 1) * oneDayTime; // first day in currnt week
+      console.log(new Date(start))
 
-    let start = new Date(Date.UTC(year, month, 1)); // first day in currnt month
-    let end = new Date(Date.UTC(year, month + 1, 0)); // last day in currnt month
+      for (let i = 0; i < 7; i++) {
+        const startDay = start + oneDayTime * i;
 
-    while (start <= end) {
-      const monday = new Date(start.getTime());
-      const sunday = new Date(start.getTime());
+        week_array.push(
+          [new Date(startDay), new Date(startDay + oneDayTime)]
+        )
+      }
+    } else {
+      //split month to weeks
+      let start = new Date(Date.UTC(year, month, 1)); // first day in currnt month
+      let end = new Date(Date.UTC(year, month + 1, 0)); // last day in currnt month
 
-      monday.setDate(monday.getDate() + 1 - monday.getDay());
-      sunday.setDate(sunday.getDate() + 7 - sunday.getDay());
+      while (start <= end) {
+        const monday = new Date(start.getTime());
+        const sunday = new Date(start.getTime());
 
-      week_array.push(
-        [monday, sunday]
-      )
+        monday.setDate(monday.getDate() + 1 - monday.getDay());
+        sunday.setDate(sunday.getDate() + 7 - sunday.getDay());
 
-      start = sunday;
+        week_array.push(
+          [monday, sunday]
+        )
+
+        start = sunday;
+      }
     }
     return week_array;
   }
@@ -112,7 +136,7 @@ export class ScheduleDetailsComponent implements OnInit {
       case 'todo':
         return 'back-green'
       case 'done':
-        return 'back-grey'
+        return 'back-gray'
       default:
         return '';
     }

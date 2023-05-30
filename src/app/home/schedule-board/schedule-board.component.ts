@@ -16,6 +16,7 @@ export class ScheduleBoardComponent implements OnInit {
   public productType: string = 'All';
   public currentPeriod: string | undefined;
   //public isMyOrAllType: boolean = true;
+  public oneDayTime = 24 * 60 * 60 * 1000;
 
   constructor(private homeService: HomeService,
     private globalStatusService: GlobalStatusService) { }
@@ -31,8 +32,20 @@ export class ScheduleBoardComponent implements OnInit {
       this.filterHCPList();
     })
 
-    this.hcpListAll = this.homeService.getHCPList();
-    this.filterHCPList();
+    this.homeService.getHCPList().subscribe({
+      next: data => {
+        this.hcpListAll = data;
+        this.filterHCPList();
+      },
+      error: err => {}
+      
+    });
+    //this.hcpListAll = this.homeService.getHCPList();
+    this.globalStatusService.isMothOrWeekEvent.subscribe((type: any) => {
+      this.getCurrentPeriod()
+      }
+    )
+    
   }
   filterHCPList() {
     let list = [];
@@ -55,19 +68,42 @@ export class ScheduleBoardComponent implements OnInit {
     this.filterHCPList();
   }
   changePeriod(type: string) {
-    const date = this.globalStatusService.currentPeriod;
-    date.setDate(1);
-    if (type == "last") {
-      date.setMonth(date.getMonth() - 1);
+    let date = this.globalStatusService.currentPeriod;
+    if (this.globalStatusService.isMothOrWeek) {
+      //week
+      //const oneDayTime = 24 * 60 * 60 * 1000;
+
+      if (type == "last") {
+        date = new Date((date.getTime() - this.oneDayTime*7));
+      } else {
+        date = new Date((date.getTime() + this.oneDayTime*7));
+      }
     } else {
-      date.setMonth(date.getMonth() + 1);
+      //month
+      date.setDate(1);
+      if (type == "last") {
+        date.setMonth(date.getMonth() - 1);
+      } else {
+        date.setMonth(date.getMonth() + 1);
+      }
+
     }
+    this.globalStatusService.currentPeriod = date;
     this.globalStatusService.currentPeriodEvent.emit(date);
     this.getCurrentPeriod();
   }
   getCurrentPeriod() {
-    this.currentPeriod = this.globalStatusService.currentPeriod.toLocaleString("en-us", { month: "short" })
-      + ' ' + this.globalStatusService.currentPeriod.getFullYear().toString();
+    if (this.globalStatusService.isMothOrWeek) {
+      //week
+      const monday = new Date(this.globalStatusService.currentPeriod.getTime() - this.oneDayTime)
+      const sunday = new Date(this.globalStatusService.currentPeriod.getTime() + this.oneDayTime * 6)
+      this.currentPeriod = monday.getDate().toString() + ' ' + monday.toLocaleString("en-us", { month: "short" }) + ' - ' + 
+      sunday.getDate().toString() + ' ' + sunday.toLocaleString("en-us", { month: "short" });
+    } else {
+      //month
+      this.currentPeriod = this.globalStatusService.currentPeriod.toLocaleString("en-us", { month: "short" })
+        + ' ' + this.globalStatusService.currentPeriod.getFullYear().toString();
+    }
   }
 
 
