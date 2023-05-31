@@ -7,9 +7,7 @@ export class GlobalStatusService {
   public isMyOrAll: any = true;
   public currentPeriod: Date = new Date();
   public isMonthOrWeek: any;
-  constructor() {
-    
-  }
+
   isMyOrAllEvent = new EventEmitter();
   isMonthOrWeekEvent = new EventEmitter();
   allProductsEvent = new EventEmitter();

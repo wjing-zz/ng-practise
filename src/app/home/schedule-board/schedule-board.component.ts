@@ -11,9 +11,9 @@ export class ScheduleBoardComponent implements OnInit {
   private hcpListAll: any;
   public hcpList: any;
   //status init
-  public hcpType: string = 'ACE Prioritization';
+  public hcpType = 'ACE Prioritization';
   public hcpTypeList: Array<string> = ['ACE Prioritization','Test Prioritization']
-  public productType: string = 'All';
+  public productType = 'All';
   public currentPeriod: string | undefined;
 
   public oneDayTime = 24 * 60 * 60 * 1000;
@@ -37,7 +37,10 @@ export class ScheduleBoardComponent implements OnInit {
         this.hcpListAll = data;
         this.filterHCPList();
       },
-      error: err => {}
+      error: err => {
+        //handle error
+        console.log(err);
+      }
       
     });
 

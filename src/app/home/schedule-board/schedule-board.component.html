@@ -40,8 +40,8 @@
                             </div>
                         </div>
                     </th>
-                    <th><app-schedule-details *ngIf="item.data" [hcpItem]="item.data" [isFirstRow]="listIndex==0"></app-schedule-details></th>
-                    <td class="schedule-count"><app-schedule-count [hcpItem]="item" [isFirstRow]="listIndex==0"></app-schedule-count></td>
+                    <th><app-schedule-details *ngIf="item.data" [hcpItem]="item.data" [isFirstRow]="listIndex===0"></app-schedule-details></th>
+                    <td class="schedule-count"><app-schedule-count [hcpItem]="item" [isFirstRow]="listIndex===0"></app-schedule-count></td>
                 </tr>
             </tbody>
         </table>

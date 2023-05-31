@@ -12,7 +12,7 @@ export class ScheduleDetailsComponent implements OnInit {
   weeks: Array<any> = [];
   listDetails: Array<any> = [];
 
-  isMyOrAllType: boolean = true;
+  isMyOrAllType = true;
   isMonthOrWeek: boolean | undefined;
   oneDayTime = 24 * 60 * 60 * 1000;
   oneWeek: Array<any> = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -52,17 +52,17 @@ export class ScheduleDetailsComponent implements OnInit {
         }
       })
       this.listDetails.push(currentPeriod);
-    };
+    }
 
   }
   splitWeeks(year: number, month: number, day: number, dayPeriod: number) {
-    let week_array = [];
+    const week_array = [];
     if (this.isMonthOrWeek) {
       //split week to days
       const now = new Date(Date.UTC(year, month, day));
       const nowTime = now.getTime();
 
-      let start = nowTime - (dayPeriod - 1) * this.oneDayTime; // first day in currnt week
+      const start = nowTime - (dayPeriod - 1) * this.oneDayTime; // first day in currnt week
       console.log(new Date(start))
 
       for (let i = 0; i < 7; i++) {
@@ -75,7 +75,7 @@ export class ScheduleDetailsComponent implements OnInit {
     } else {
       //split month to weeks
       let start = new Date(Date.UTC(year, month, 1)); // first day in currnt month
-      let end = new Date(Date.UTC(year, month + 1, 0)); // last day in currnt month
+      const end = new Date(Date.UTC(year, month + 1, 0)); // last day in currnt month
 
       while (start <= end) {
         const monday = new Date(start.getTime());
@@ -138,14 +138,14 @@ export class ScheduleDetailsComponent implements OnInit {
         percentage = (new Date().getDay()/7*100).toString() + '%';
       } else {
         //month
-      let today = new Date()
-      let lastDay= new Date(today.getFullYear(), today.getMonth() + 1, 0);
+      const today = new Date()
+      const lastDay= new Date(today.getFullYear(), today.getMonth() + 1, 0);
       percentage = (today.getDate()/lastDay.getDate()*100).toString() + '%'
       }
       return percentage;
   }
   ifCurrentPeriod() {
-    let isCurrentPeriod: boolean = false;
+    let isCurrentPeriod = false;
     if (this.globalStatusService.isMonthOrWeek) {
       //check if current week
       const monday = new Date(this.globalStatusService.currentPeriod.getTime() - this.oneDayTime);

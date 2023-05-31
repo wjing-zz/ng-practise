@@ -8,15 +8,15 @@ import { GlobalStatusService } from 'src/app/shared/service/global-status.servic
 export class ScheduleFilterComponent {
   toggleTextA:any = {left:'MY',right:'ALL'};
   toggleTextB:any = {left:'Month',right:'Week'};
-  toggleAisChecked:boolean = true;
-  toggleBisChecked:boolean = false;
+  toggleAisChecked = true;
+  toggleBisChecked = false;
 
   productsType: any = {
     isAll: true,
     isErleada: false,
     isZytiga: false
   }
-  typingSearchValue: string ='';
+  typingSearchValue ='';
 
   constructor(
     private globalStatusService: GlobalStatusService){}
@@ -56,9 +56,6 @@ export class ScheduleFilterComponent {
     this.globalStatusService.allProductsEvent.emit(type);
   }
 
-  onSearchInputChange($event:any, type:any){
-
-  }
 
 
 }

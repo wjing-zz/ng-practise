@@ -1,22 +1,15 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-toggle-switch',
   templateUrl: './toggle-switch.component.html',
   styleUrls: ['./toggle-switch.component.scss']
 })
-export class ToggleSwitchComponent implements OnInit {
+export class ToggleSwitchComponent {
   @Input() color: any;
   @Input() toggleText: any;
   @Input() isChecked: boolean | undefined;
   @Output() toggleSwitchChange: EventEmitter<any> = new EventEmitter();
-
-  ngOnInit(): void {
-
-    if(this.isChecked){
-
-    }
-  }
 
   toggleClick(){
     this.isChecked=!this.isChecked;
@@ -24,7 +17,7 @@ export class ToggleSwitchComponent implements OnInit {
   }
   
   getTextStyle(type: string){
-    let result = []
+    const result = []
     if(this.isChecked){
       if(type == 'right'){
         result.push('isChecked',this.color);
