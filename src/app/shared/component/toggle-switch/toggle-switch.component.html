@@ -1,8 +1,8 @@
 <div class="toggle">
-    <label class="toggleText" [ngClass]="getTextStyle('left')">{{toggleText.left}}</label>
+    <label class="toggle-text" [ngClass]="getTextStyle('left')">{{toggleText.left}}</label>
     <label class="switch">
         <input type="checkbox" [checked]="isChecked" value="{{isChecked}}" (click)="toggleClick()">
         <span class="slider round"[ngClass]="getSliderColor()"></span>
     </label>
-    <label class="toggleText" [ngClass]="getTextStyle('right')">{{toggleText.right}}</label>
+    <label class="toggle-text" [ngClass]="getTextStyle('right')">{{toggleText.right}}</label>
 </div>

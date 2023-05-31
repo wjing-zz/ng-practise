@@ -15,7 +15,7 @@
     padding-left: 10px;
     width: 33%;
 }
-.productsSwitch {
+.products-switch {
     display: flex;
     justify-content: space-evenly;
     width: 400px;
@@ -28,7 +28,7 @@
     cursor: pointer;
     user-select: none;
 
-    .productsButton {
+    .products-button {
       width: 50%;
       padding: 4px 0px;
       background-color: $icon-light-gray;
