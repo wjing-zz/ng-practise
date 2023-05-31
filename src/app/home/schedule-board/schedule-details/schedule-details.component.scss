@@ -90,10 +90,9 @@
 
   .grid-item {
     display: inline-grid;
-    grid-template-rows: 50% 50%;
     grid-template-columns: repeat(auto-fill, 35px);
     justify-content: center;
-    align-items: end;
+    align-items: center;
     position: relative;
   }
   .grid-container .grid-item:not(:last-child) {

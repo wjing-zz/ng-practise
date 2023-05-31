@@ -4,9 +4,11 @@
     margin-left: 80px !important;
 }
 .first-row{
-    padding-top: 20px;
+    padding-top: 24px;
     .fa-regular{
         color: $white;
+        font-size: 18px;
+        padding: 2px 2px 0px 0px;
     }
 }
 .grid-container {
@@ -21,9 +23,8 @@
 .icon-background{
     background-color: $icon-gray;
     border-radius: 20px;
-    padding: 4px;
+    padding: 8px;
     display: inline-block;
-    margin: 0 12px;
     width: 20px;
     height: 20px;
     text-align: center;

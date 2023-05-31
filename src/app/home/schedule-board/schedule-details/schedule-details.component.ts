@@ -24,7 +24,9 @@ export class ScheduleDetailsComponent implements OnInit {
   }
 
   onInitData() {
-    //get toggle status
+    const currentDate = this.globalStatusService.currentPeriod;
+    this.splitCurrentWeekOnit(currentDate);
+    //get filter status
     this.isMyOrAllType = this.globalStatusService.isMyOrAll;
     this.isMonthOrWeek = this.globalStatusService.isMonthOrWeek;
     this.globalStatusService.isMyOrAllEvent.subscribe((toggleStatus: any) => {
@@ -34,10 +36,6 @@ export class ScheduleDetailsComponent implements OnInit {
       this.isMonthOrWeek = toggleStatus;
       this.splitCurrentWeekOnit(currentDate);
     })
-
-    const currentDate = this.globalStatusService.currentPeriod;
-    this.splitCurrentWeekOnit(currentDate)
-
     this.globalStatusService.currentPeriodEvent.subscribe((currentDate: any) => {
       this.splitCurrentWeekOnit(currentDate);
     })
@@ -96,7 +94,7 @@ export class ScheduleDetailsComponent implements OnInit {
     return week_array;
   }
   dateInPeriod(date: string, period: Array<any>) {
-    const currentDate = Date.parse(date)
+    const currentDate = Date.parse(date);
 
     if (currentDate > Date.parse(period[0]) && currentDate <= Date.parse(period[1])) {
       return true;
@@ -105,24 +103,22 @@ export class ScheduleDetailsComponent implements OnInit {
     }
   }
   getIconType(iconType: string) {
-
     switch (iconType) {
       case 'contact':
         return 'fa-solid fa-user-group';
       case 'window':
         return 'fa-regular fa-window-maximize';
       case 'mail':
-        return 'fa-regular fa-envelope'
+        return 'fa-regular fa-envelope';
       case 'phone':
-        return 'fa-solid fa-phone'
+        return 'fa-solid fa-phone';
       case 'pen':
-        return 'fa-solid fa-pen'
+        return 'fa-solid fa-pen';
       case 'mail-group':
-        return 'fa-solid fa-envelopes-bulk'
+        return 'fa-solid fa-envelopes-bulk';
       default:
         return '';
     }
-
 
   }
   getIconBackColor(iconType: string) {
@@ -151,17 +147,16 @@ export class ScheduleDetailsComponent implements OnInit {
   ifCurrentPeriod() {
     let isCurrentPeriod: boolean = false;
     if (this.globalStatusService.isMonthOrWeek) {
-      //week
-      const monday = new Date(this.globalStatusService.currentPeriod.getTime() - this.oneDayTime)
-      const sunday = new Date(this.globalStatusService.currentPeriod.getTime() + this.oneDayTime * 6)
+      //check if current week
+      const monday = new Date(this.globalStatusService.currentPeriod.getTime() - this.oneDayTime);
+      const sunday = new Date(this.globalStatusService.currentPeriod.getTime() + this.oneDayTime * 6);
       
-      //save if currentweek
       const today = new Date()
       if (today.getTime() > monday.getTime() && today.getTime() < sunday.getTime()) { 
         isCurrentPeriod = true; 
       } 
     } else {
-      //month
+      //check if current month
       isCurrentPeriod = new Date().getFullYear() == this.globalStatusService.currentPeriod.getFullYear()
         && new Date().getMonth() == this.globalStatusService.currentPeriod.getMonth();
 

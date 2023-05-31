@@ -24,7 +24,7 @@
     <div class="grid-container header">
         <div *ngFor="let day of oneWeek;let index=index" class="icon-gray">{{day}}</div>
     </div>
-    <div class="grid-container body" style="height: 100%;">
+    <div class="grid-container body">
         <div class="current-date-pointer" *ngIf="ifCurrentPeriod()" [ngStyle]="{'left':calculatePointer()}"></div>
         <div *ngFor="let detail of listDetails;let index = index" class="grid-item">
             <div *ngFor="let item of detail" class="icon-dispaly">
