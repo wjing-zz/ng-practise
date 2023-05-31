@@ -1,4 +1,4 @@
-@import "../../../shared/scss/common.scss";
+@import '../../../shared/scss/common.scss';
 
 .schedule-details-container {
   height: 100%;
@@ -15,7 +15,7 @@
     .grid-container {
       .current-date-pointer {
         &::before {
-          content: " ";
+          content: ' ';
           display: inline-block;
           width: 0;
           height: 0;

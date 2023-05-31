@@ -1,78 +1,78 @@
 @import '../../shared/scss/common.scss';
 
-.schedule-filter{
-    width: 100%;
-    background-color: $white;
-    box-shadow:  0 0 10px $shadow;
-    border-radius: 4px;
-    display: flex;
-    height:50px;
-    align-items: center;
-    min-width:1400px;
+.schedule-filter {
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0 0 10px $shadow;
+  border-radius: 4px;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  min-width: 1400px;
 }
 
-.product-change{
-    padding-left: 10px;
-    width: 33%;
+.product-change {
+  padding-left: 10px;
+  width: 33%;
 }
 .products-switch {
-    display: flex;
-    justify-content: space-evenly;
-    width: 400px;
-    height: 30px;
-    text-align: center;
-    align-items: center;
-    font-weight: bold;
-    border: 2px solid $toggle-gray !important;
-    border-radius: 4px;
-    cursor: pointer;
-    user-select: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 400px;
+  height: 30px;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+  border: 2px solid $toggle-gray !important;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
 
-    .products-button {
-      width: 50%;
-      padding: 4px 0px;
-      background-color: $icon-light-gray;
-      color: $icon-dark-gray;
-    }
-    .type-active{
-      color: $blue;
-      background-color: $light-blue;
-      border: 2px solid $blue  !important;
-      border-radius: 4px;
-      box-shadow: 0 3px 5px $icon-gray;
-    }
-    .type-icon {
-      font-size: 28px;
-      color: $blue;
-    }
+  .products-button {
+    width: 50%;
+    padding: 4px 0px;
+    background-color: $icon-light-gray;
+    color: $icon-dark-gray;
+  }
+  .type-active {
+    color: $blue;
+    background-color: $light-blue;
+    border: 2px solid $blue !important;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px $icon-gray;
+  }
+  .type-icon {
+    font-size: 28px;
+    color: $blue;
+  }
 }
 
-.toggle{
+.toggle {
   width: 15%;
 }
 
 //search bar
-.search{
+.search {
   width: 20%;
-  border-bottom: 1px solid $under-line;  
-  border-top:0px;  
-  border-left:0px;  
-  border-right:0px;  
+  border-bottom: 1px solid $under-line;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
 }
-#bar-search{
+#bar-search {
   border: 0;
   height: 25px;
   padding-left: 10px;
   font-size: 16px;
 }
-.magnifying{
+.magnifying {
   color: $blue;
   font-size: 25px;
 }
-input:focus{
-  outline:none;
+input:focus {
+  outline: none;
 }
-::placeholder { 
+::placeholder {
   color: $icon-dark-gray;
-  opacity: 1; 
+  opacity: 1;
 }

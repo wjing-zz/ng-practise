@@ -8,9 +8,8 @@ describe('ScheduleCountComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ScheduleCountComponent ]
-    })
-    .compileComponents();
+      declarations: [ScheduleCountComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ScheduleCountComponent);
     component = fixture.componentInstance;

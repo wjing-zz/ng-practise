@@ -4,8 +4,6 @@ import { ToggleSwitchComponent } from '../shared/component/toggle-switch/toggle-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

@@ -1,19 +1,35 @@
 <div *ngIf="isFirstRow" class="grid-container first-row">
-    <div></div>
-    <span class="icon-background"><i class="fa-regular fa-user-group"></i> </span>
-    <span class="icon-background"><i class="fa-regular fa-window-maximize"></i> </span>
-    <span class="icon-background"><i class="fa-regular fa-phone"></i> </span>
-    <span class="icon-background"><i class="fa-regular fa-envelope"></i> </span>
-    <span class="icon-background"><i class="fa-regular fa-pen"></i> </span>
-    <span class="icon-background"><i class="fa-regular fa-envelopes-bulk"></i></span>
+  <div></div>
+  <span class="icon-background"><i class="fa-regular fa-user-group"></i> </span>
+  <span class="icon-background"
+    ><i class="fa-regular fa-window-maximize"></i>
+  </span>
+  <span class="icon-background"><i class="fa-regular fa-phone"></i> </span>
+  <span class="icon-background"><i class="fa-regular fa-envelope"></i> </span>
+  <span class="icon-background"><i class="fa-regular fa-pen"></i> </span>
+  <span class="icon-background"
+    ><i class="fa-regular fa-envelopes-bulk"></i
+  ></span>
 </div>
 <div class="grid-container count-body">
-    <div class="tar-font">Target</div>
-    <div *ngFor="let item of hcpItem.scheduleCount.tar" class="grid-item">{{item}}</div>
-    <div class="tar-font blue">ToDo</div>
-    <div *ngFor="let item of hcpItem.scheduleCount.todo" class="grid-item blue"><span class="toDo-icon">{{item}}</span></div>
-    <div><i class="fa-regular fa-calendar-days icon-green"></i></div>
-    <div *ngFor="let item of hcpItem.scheduleCount.sche" class="grid-item icon-green">{{item}}</div>
-    <div><i class="fa-solid fa-check icon-gray"></i></div>
-    <div *ngFor="let item of hcpItem.scheduleCount.done" class="grid-item icon-gray">{{item}}</div>
+  <div class="tar-font">Target</div>
+  <div *ngFor="let item of hcpItem.scheduleCount.tar" class="grid-item">
+    {{ item }}
+  </div>
+  <div class="tar-font blue">ToDo</div>
+  <div *ngFor="let item of hcpItem.scheduleCount.todo" class="grid-item blue">
+    <span class="toDo-icon">{{ item }}</span>
+  </div>
+  <div><i class="fa-regular fa-calendar-days icon-green"></i></div>
+  <div
+    *ngFor="let item of hcpItem.scheduleCount.sche"
+    class="grid-item icon-green">
+    {{ item }}
+  </div>
+  <div><i class="fa-solid fa-check icon-gray"></i></div>
+  <div
+    *ngFor="let item of hcpItem.scheduleCount.done"
+    class="grid-item icon-gray">
+    {{ item }}
+  </div>
 </div>

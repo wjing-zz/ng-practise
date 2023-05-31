@@ -1,104 +1,101 @@
 @import '../../shared/scss/common.scss';
 
-.schedule-board{
-    margin-top:20px;
+.schedule-board {
+  margin-top: 20px;
 }
-.board-table{
-    width: 100%;
-    background-color: $white;
-    box-shadow:  0 0 10px $shadow;
-    display: flex;
-    align-items: center;
-    min-width:1400px;
-    border-radius: 4px;
+.board-table {
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0 0 10px $shadow;
+  display: flex;
+  align-items: center;
+  min-width: 1400px;
+  border-radius: 4px;
 }
-.sec-header{
-    background-color: $back-ground;
-    color: $blue;
-    user-select: none;
+.sec-header {
+  background-color: $back-ground;
+  color: $blue;
+  user-select: none;
 }
 table {
-    width: 100%;
-    margin: 0 auto;
-    border: 0px solid;
-    border-collapse: collapse;
-    border-radius: 4px;
+  width: 100%;
+  margin: 0 auto;
+  border: 0px solid;
+  border-collapse: collapse;
+  border-radius: 4px;
 }
 
-th{ 
-    height: 40px;
+th {
+  height: 40px;
 }
 
 th,
-td{
-    border-top: 2px solid $toggle-gray;
-    border-left: 2px solid $toggle-gray;
-    border-right: 0;
-    border-bottom: 0;
+td {
+  border-top: 2px solid $toggle-gray;
+  border-left: 2px solid $toggle-gray;
+  border-right: 0;
+  border-bottom: 0;
 }
-thead tr:nth-child(1) th{
-    border-top: 0;
+thead tr:nth-child(1) th {
+  border-top: 0;
 }
 
-tbody tr:nth-child(1) th,tbody tr:nth-child(1) td{
-    border-top: 0;
+tbody tr:nth-child(1) th,
+tbody tr:nth-child(1) td {
+  border-top: 0;
 }
 
 //dropdown
-select{
-    border: 0;
-    background-color: $back-ground;
-    font-size: 18px;
-    font-weight: bold;
-    appearance: none;
-    padding-right: 10px;
-    cursor: pointer;
-
+select {
+  border: 0;
+  background-color: $back-ground;
+  font-size: 18px;
+  font-weight: bold;
+  appearance: none;
+  padding-right: 10px;
+  cursor: pointer;
 }
-select:focus{
-    outline:none;
-  }
-
-.font-blue{
-    color: $blue;
+select:focus {
+  outline: none;
 }
 
-
+.font-blue {
+  color: $blue;
+}
 
 //card
-.hcp-card{
-    width: 200px;
-    height: 100%;
-    .drName {
-        font-size: 18px;
-    }
-    .group-name{
-        color: $white;
-    }
-    .hosName{
-        color: $icon-gray;
-    }
-    .group-backgroud{
-        background-color: $icon-gray;
-        border-radius: 6px;
-        padding: 3px 8px;
-    }
+.hcp-card {
+  width: 200px;
+  height: 100%;
+  .drName {
+    font-size: 18px;
+  }
+  .group-name {
+    color: $white;
+  }
+  .hosName {
+    color: $icon-gray;
+  }
+  .group-backgroud {
+    background-color: $icon-gray;
+    border-radius: 6px;
+    padding: 3px 8px;
+  }
 }
-.hcp-card .card-detail{
-    text-align: left;
-    margin-left: 25px;
-    min-height: 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.hcp-card .card-detail {
+  text-align: left;
+  margin-left: 25px;
+  min-height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.schedule-count{
-    width: 400px;
-    height: 100%;
+.schedule-count {
+  width: 400px;
+  height: 100%;
 }
 
-
-.angle-class{
-    cursor: pointer;
-    padding: 0 25px;
+.angle-class {
+  cursor: pointer;
+  padding: 0 25px;
 }

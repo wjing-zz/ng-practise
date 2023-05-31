@@ -1,50 +1,68 @@
 <div class="schedule-board">
-    <div class="board-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>HCP List</th>
-                    <th>Confirmed schedule</th>
-                    <th>ACE ReCommended Frequency</th>
-                </tr>
-                <tr class="sec-header">
-                    <th>
-                        <select class="font-blue" id="ht" (change)="changeHcpType()" [(ngModel)]="hcpType">
-                            <option *ngFor="let ht of hcpTypeList" [value]="ht">{{ht}}</option>
-                        </select><i class="fa-regular fa-angle-down"></i>
-                    </th>
-                    <th>
-                        <span class="angle-class">
-                            <i class="fa-regular fa-angle-left" (click)="changePeriod('last')"></i>
-                        </span>
-                        {{currentPeriod}}
-                        <span class="angle-class">
-                            <i class="fa-regular fa-angle-right" (click)="changePeriod('next')"></i>
-                        </span>
-                    </th>
-                    <th>{{currentPeriod}}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of hcpList;let listIndex = index;">
-                    <th class="hcp-card">
-                        <div class = "card-detail">
-                            <div class="group-name">
-                                <span class="group-backgroud">{{item.group}}</span>
-                            </div>
-                            <div class="drName font-blue">
-                                {{item.drName}}
-                            </div>
-                            <div class="hosName">
-                                {{item.hosName}}
-                            </div>
-                        </div>
-                    </th>
-                    <th><app-schedule-details *ngIf="item.data" [hcpItem]="item.data" [isFirstRow]="listIndex===0"></app-schedule-details></th>
-                    <td class="schedule-count"><app-schedule-count [hcpItem]="item" [isFirstRow]="listIndex===0"></app-schedule-count></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
+  <div class="board-table">
+    <table>
+      <thead>
+        <tr>
+          <th>HCP List</th>
+          <th>Confirmed schedule</th>
+          <th>ACE ReCommended Frequency</th>
+        </tr>
+        <tr class="sec-header">
+          <th>
+            <select
+              class="font-blue"
+              id="ht"
+              (change)="changeHcpType()"
+              [(ngModel)]="hcpType">
+              <option *ngFor="let ht of hcpTypeList" [value]="ht">
+                {{ ht }}
+              </option></select
+            ><i class="fa-regular fa-angle-down"></i>
+          </th>
+          <th>
+            <span class="angle-class">
+              <i
+                class="fa-regular fa-angle-left"
+                (click)="changePeriod('last')"></i>
+            </span>
+            {{ currentPeriod }}
+            <span class="angle-class">
+              <i
+                class="fa-regular fa-angle-right"
+                (click)="changePeriod('next')"></i>
+            </span>
+          </th>
+          <th>{{ currentPeriod }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of hcpList; let listIndex = index">
+          <th class="hcp-card">
+            <div class="card-detail">
+              <div class="group-name">
+                <span class="group-backgroud">{{ item.group }}</span>
+              </div>
+              <div class="drName font-blue">
+                {{ item.drName }}
+              </div>
+              <div class="hosName">
+                {{ item.hosName }}
+              </div>
+            </div>
+          </th>
+          <th>
+            <app-schedule-details
+              *ngIf="item.data"
+              [hcpItem]="item.data"
+              [isFirstRow]="listIndex === 0"></app-schedule-details>
+          </th>
+          <td class="schedule-count">
+            <app-schedule-count
+              [hcpItem]="item"
+              [isFirstRow]="listIndex === 0"></app-schedule-count>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

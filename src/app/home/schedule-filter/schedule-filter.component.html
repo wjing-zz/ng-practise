@@ -1,24 +1,52 @@
 <div class="schedule-filter">
-    <!-- product-change -->
-    <div class="product-change">
-        <div class="products-switch">
-            <span class="products-button" [ngClass]="{'type-active': productsType.isAll}" (click)="changeTableData('All')">All Products</span>
-            <span class="products-button" [ngClass]="{'type-active': productsType.isErleada}" (click)="changeTableData('Erleada')">Erleada</span>
-            <span class="products-button" [ngClass]="{'type-active': productsType.isZytiga}" (click)="changeTableData('Zytiga')">Zytiga</span>
-          </div>
+  <!-- product-change -->
+  <div class="product-change">
+    <div class="products-switch">
+      <span
+        class="products-button"
+        [ngClass]="{ 'type-active': productsType.isAll }"
+        (click)="changeTableData('All')"
+        >All Products</span
+      >
+      <span
+        class="products-button"
+        [ngClass]="{ 'type-active': productsType.isErleada }"
+        (click)="changeTableData('Erleada')"
+        >Erleada</span
+      >
+      <span
+        class="products-button"
+        [ngClass]="{ 'type-active': productsType.isZytiga }"
+        (click)="changeTableData('Zytiga')"
+        >Zytiga</span
+      >
     </div>
-    <!-- toggles -->
-    <div class="toggle">
-       <app-toggle-switch (toggleSwitchChange)="toggleSwitchChanged($event, 1)" [isChecked]='toggleAisChecked' [color] = '"purple"' [toggleText]="toggleTextA"></app-toggle-switch>
-    </div>
-    <div class="toggle">
-        <app-toggle-switch (toggleSwitchChange)="toggleSwitchChanged($event, 2)" [isChecked]='toggleBisChecked' [color] = '"blue"' [toggleText]="toggleTextB"></app-toggle-switch>
-    </div>
-    <!--search-->
-    <div class="search">
-        <label class="magnifying" for="bar-search"><i class="fa-solid fa-magnifying-glass"></i></label>
-        <input id="bar-search" type="search" [(ngModel)]="typingSearchValue"
-            placeholder="Search HCP/HCO" aria-label="Search"/>
-    </div>
-
+  </div>
+  <!-- toggles -->
+  <div class="toggle">
+    <app-toggle-switch
+      (toggleSwitchChange)="toggleSwitchChanged($event, 1)"
+      [isChecked]="toggleAisChecked"
+      [color]="'purple'"
+      [toggleText]="toggleTextA"></app-toggle-switch>
+  </div>
+  <div class="toggle">
+    <app-toggle-switch
+      (toggleSwitchChange)="toggleSwitchChanged($event, 2)"
+      [isChecked]="toggleBisChecked"
+      [color]="'blue'"
+      [toggleText]="toggleTextB"></app-toggle-switch>
+  </div>
+  <!--search-->
+  <div class="search">
+    <label class="magnifying" for="bar-search"
+      ><i class="fa-solid fa-magnifying-glass"></i
+    ></label>
+    <input
+      id="bar-search"
+      type="search"
+      [(ngModel)]="typingSearchValue"
+      placeholder="Search HCP/HCO"
+      aria-label="Search" />
+  </div>
 </div>

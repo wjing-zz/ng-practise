@@ -20,15 +20,10 @@ import { ScheduleDetailsComponent } from './home/schedule-board/schedule-details
     ScheduleFilterComponent,
     ScheduleBoardComponent,
     ScheduleCountComponent,
-    ScheduleDetailsComponent
+    ScheduleDetailsComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

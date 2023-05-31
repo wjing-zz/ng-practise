@@ -3,24 +3,23 @@ import { GlobalStatusService } from 'src/app/shared/service/global-status.servic
 @Component({
   selector: 'app-schedule-filter',
   templateUrl: './schedule-filter.component.html',
-  styleUrls: ['./schedule-filter.component.scss']
+  styleUrls: ['./schedule-filter.component.scss'],
 })
 export class ScheduleFilterComponent {
-  toggleTextA:any = {left:'MY',right:'ALL'};
-  toggleTextB:any = {left:'Month',right:'Week'};
+  toggleTextA: any = { left: 'MY', right: 'ALL' };
+  toggleTextB: any = { left: 'Month', right: 'Week' };
   toggleAisChecked = true;
   toggleBisChecked = false;
 
   productsType: any = {
     isAll: true,
     isErleada: false,
-    isZytiga: false
-  }
-  typingSearchValue ='';
+    isZytiga: false,
+  };
+  typingSearchValue = '';
 
-  constructor(
-    private globalStatusService: GlobalStatusService){}
-  toggleSwitchChanged(event:any, type:number){
+  constructor(private globalStatusService: GlobalStatusService) {}
+  toggleSwitchChanged(event: any, type: number) {
     switch (type) {
       case 1:
         this.toggleAisChecked = event;
@@ -33,15 +32,14 @@ export class ScheduleFilterComponent {
         this.globalStatusService.isMonthOrWeekEvent.emit(this.toggleBisChecked);
         break;
     }
-    
   }
-  changeTableData(type:any){
-    switch(type){
-      case 'All': 
+  changeTableData(type: any) {
+    switch (type) {
+      case 'All':
         this.productsType.isAll = true;
         this.productsType.isErleada = false;
         this.productsType.isZytiga = false;
-      break;
+        break;
       case 'Erleada':
         this.productsType.isErleada = true;
         this.productsType.isAll = false;
@@ -51,11 +49,8 @@ export class ScheduleFilterComponent {
         this.productsType.isZytiga = true;
         this.productsType.isAll = false;
         this.productsType.isErleada = false;
-      break;
+        break;
     }
     this.globalStatusService.allProductsEvent.emit(type);
   }
-
-
-
 }

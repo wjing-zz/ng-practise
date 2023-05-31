@@ -1,62 +1,61 @@
 @import '../../../shared/scss/common.scss';
 
-.margin-left{
-    margin-left: 80px !important;
+.margin-left {
+  margin-left: 80px !important;
 }
-.first-row{
-    padding-top: 24px;
-    .fa-regular{
-        color: $white;
-        font-size: 18px;
-        padding: 2px 2px 0px 0px;
-    }
+.first-row {
+  padding-top: 24px;
+  .fa-regular {
+    color: $white;
+    font-size: 18px;
+    padding: 2px 2px 0px 0px;
+  }
 }
 .grid-container {
-    display: grid;
-    grid-template-columns: 16% 14% 14% 14% 14% 14% 14%;
-    grid-template-rows: repeat(2, 25%);
-    padding-left:15px;
-    text-align: center;
-    justify-items: center;
-    align-items: center;
-  }
-.icon-background{
-    background-color: $icon-gray;
-    border-radius: 20px;
-    padding: 8px;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    text-align: center;
+  display: grid;
+  grid-template-columns: 16% 14% 14% 14% 14% 14% 14%;
+  grid-template-rows: repeat(2, 25%);
+  padding-left: 15px;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
 }
-.count-body{
-    background-color: #f7fffd;
-    min-height: 150px;
+.icon-background {
+  background-color: $icon-gray;
+  border-radius: 20px;
+  padding: 8px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
 }
-.tar-font{
-    font-size: 15px;
-    font-family: fantasy;
+.count-body {
+  background-color: #f7fffd;
+  min-height: 150px;
 }
-.blue{
-    color: $blue;
+.tar-font {
+  font-size: 15px;
+  font-family: fantasy;
 }
-.icon-green{
-    color: $icon-green;
+.blue {
+  color: $blue;
 }
-.icon-gray{
-    color: $icon-dark-gray;
+.icon-green {
+  color: $icon-green;
 }
-.toDo-icon{
-    background-color: $light-blue;
-    border-radius: 20px;
-    padding: 4px;
-    display: inline-block;
-    width: 20px;
-    text-align: center;
-    border: 2px solid $blue;
-    font-weight: bold;
+.icon-gray {
+  color: $icon-dark-gray;
 }
-.grid-item{
-    text-align: center;
+.toDo-icon {
+  background-color: $light-blue;
+  border-radius: 20px;
+  padding: 4px;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  border: 2px solid $blue;
+  font-weight: bold;
 }
-
+.grid-item {
+  text-align: center;
+}

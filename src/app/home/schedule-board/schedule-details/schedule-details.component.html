@@ -1,41 +1,64 @@
-
- <!-- Month -->
-<div class="schedule-details-container" *ngIf="!isMonthOrWeek" [ngClass]="isFirstRow ? 'first-row':''">
-    <div class="grid-container header">
-        <div *ngFor="let i of weeks;let index=index" class="icon-gray">Week {{index+1}}</div>
+<!-- Month -->
+<div
+  class="schedule-details-container"
+  *ngIf="!isMonthOrWeek"
+  [ngClass]="isFirstRow ? 'first-row' : ''">
+  <div class="grid-container header">
+    <div *ngFor="let i of weeks; let index = index" class="icon-gray">
+      Week {{ index + 1 }}
     </div>
-    <div class="grid-container body">
-        <div class="current-date-pointer" *ngIf="ifCurrentPeriod()" [ngStyle]="{'left':calculatePointer()}"></div>
-        <div *ngFor="let detail of listDetails;let index = index" class="grid-item">
-            <div *ngFor="let item of detail" class="icon-dispaly">
-                <span *ngIf="item.owner === 'my'" class="icon-background">
-                    <div class="icon" [ngClass]="getIconType(item.icon)"></div>
-                </span>
-                <span *ngIf="item.owner === 'all' && isMyOrAllType" class="icon-background"
-                    [ngClass]="getIconBackColor(item.type)">
-                    <div class="icon" [ngClass]="getIconType(item.icon)"></div>
-                </span>
-            </div>
-        </div>
+  </div>
+  <div class="grid-container body">
+    <div
+      class="current-date-pointer"
+      *ngIf="ifCurrentPeriod()"
+      [ngStyle]="{ left: calculatePointer() }"></div>
+    <div
+      *ngFor="let detail of listDetails; let index = index"
+      class="grid-item">
+      <div *ngFor="let item of detail" class="icon-dispaly">
+        <span *ngIf="item.owner === 'my'" class="icon-background">
+          <div class="icon" [ngClass]="getIconType(item.icon)"></div>
+        </span>
+        <span
+          *ngIf="item.owner === 'all' && isMyOrAllType"
+          class="icon-background"
+          [ngClass]="getIconBackColor(item.type)">
+          <div class="icon" [ngClass]="getIconType(item.icon)"></div>
+        </span>
+      </div>
     </div>
+  </div>
 </div>
 <!-- Week -->
-<div class="schedule-details-container" *ngIf="isMonthOrWeek" [ngClass]="isFirstRow ? 'first-row':''">
-    <div class="grid-container header">
-        <div *ngFor="let day of oneWeek;let index=index" class="icon-gray">{{day}}</div>
+<div
+  class="schedule-details-container"
+  *ngIf="isMonthOrWeek"
+  [ngClass]="isFirstRow ? 'first-row' : ''">
+  <div class="grid-container header">
+    <div *ngFor="let day of oneWeek; let index = index" class="icon-gray">
+      {{ day }}
     </div>
-    <div class="grid-container body">
-        <div class="current-date-pointer" *ngIf="ifCurrentPeriod()" [ngStyle]="{'left':calculatePointer()}"></div>
-        <div *ngFor="let detail of listDetails;let index = index" class="grid-item">
-            <div *ngFor="let item of detail" class="icon-dispaly">
-                <span *ngIf="item.owner === 'my'" class="icon-background">
-                    <div class="icon" [ngClass]="getIconType(item.icon)"></div>
-                </span>
-                <span *ngIf="item.owner === 'all' && isMyOrAllType" class="icon-background"
-                    [ngClass]="getIconBackColor(item.type)">
-                    <div class="icon" [ngClass]="getIconType(item.icon)"></div>
-                </span>
-            </div>
-        </div>
+  </div>
+  <div class="grid-container body">
+    <div
+      class="current-date-pointer"
+      *ngIf="ifCurrentPeriod()"
+      [ngStyle]="{ left: calculatePointer() }"></div>
+    <div
+      *ngFor="let detail of listDetails; let index = index"
+      class="grid-item">
+      <div *ngFor="let item of detail" class="icon-dispaly">
+        <span *ngIf="item.owner === 'my'" class="icon-background">
+          <div class="icon" [ngClass]="getIconType(item.icon)"></div>
+        </span>
+        <span
+          *ngIf="item.owner === 'all' && isMyOrAllType"
+          class="icon-background"
+          [ngClass]="getIconBackColor(item.type)">
+          <div class="icon" [ngClass]="getIconType(item.icon)"></div>
+        </span>
+      </div>
     </div>
+  </div>
 </div>

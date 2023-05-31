@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GlobalStatusService {
   public isMyOrAll: any = true;
